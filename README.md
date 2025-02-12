@@ -1,8 +1,32 @@
-# React + Vite
+# VGU 2025 Career Fair - Registration Form - using ReactJS & Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full stack form mimicing Google Form, designated for companies interested in participating and/or sponsoring the 2025 Career Fair event.
 
-Currently, two official plugins are available:
+### This form has featured:
+- Detailed form to file required information of participating partners
+- Navigation between different pages while storing information
+- Classifications of different types of participation
+- CSS Effects & Animations
+- Connection to FireBase to sync & store inputs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Roadmap for improvement:
+- Dynamically updated booth map, highlighting available space for register
+- CSS Fine-tuning
+- Preview for attached file(s)
+- Reset button to clear all inputs
+
+```
+<<- Please contact us if you find any bugs & issues related to using this form; we will make sure to fix it if necessary ->>
+```
+
+### Usage notice:
+In order to use this project, download all files to your computer, and make sure to install all required softwares.
+Test the files by running
+```
+npm run dev
+```
+to launch a localhost instance, or push the files to a webhost cloud.
+
+
+
+<sub>more info may be updated in the future</sub>
