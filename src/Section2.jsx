@@ -1,25 +1,8 @@
-import { useState } from "react";
 import SponsorForm from "./SponsorForm.jsx";
 import ExhibitorForm from "./ExhibitorForm.jsx";
 import ExhibitorNSponsorForm from "./ExhibitorNSponsorForm.jsx";
 
-export default function Page2() {
-  const [formData, setFormData] = useState({
-    companyName: "",
-    companyAddress: "",
-    companyPhone: "",
-    companyWebsite: "",
-    companyLinkedin: "",
-    companyFanpage: "",
-    companyCareerPage: "",
-    companyLogo: null,
-    videoLink: "",
-    companyIntroduction: "",
-    registrationType: "Exhibitor",
-    sponsorLevel: "",
-    boothSize: "",
-  });
-
+export default function Section2({ formData, setFormData }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -36,15 +19,10 @@ export default function Page2() {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
   return (
     <div className="container2">
       <h2>Industry Registration Form</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div>
           <label>Company's Name:</label>
           <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required />
@@ -76,6 +54,7 @@ export default function Page2() {
         <div>
           <label>Company's Logo:</label>
           <input type="file" name="companyLogo" accept="image/*" onChange={handleFileChange} required />
+          {formData.companyLogo && <p>File selected: {formData.companyLogo.name}</p>}
         </div>
         <div>
           <label>Video Link:</label>
