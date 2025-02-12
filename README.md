@@ -23,6 +23,9 @@ This project is a full stack form mimicing Google Form, designated for companies
 In order to use this project, download all files to your computer, and make sure to install all required softwares.
 Test the files by running
 ```
+npm install
+```
+```
 npm run dev
 ```
 to launch a localhost instance, or push the files to a webhost cloud.
