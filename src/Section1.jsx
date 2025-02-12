@@ -1,6 +1,6 @@
-export default function Section1({ formData, setFormData }) {
-    return (
-      <div className="container1">
+export default function Section1() {
+  return (
+    <div className="container1">
       <h1>Career Fair and Industry Exploration Day 2025</h1>
       <h2>Industry Registration Form</h2>
       <p>
@@ -20,7 +20,7 @@ export default function Section1({ formData, setFormData }) {
       <p>
         For further information about the event, please kindly refer to the
         attached proposal of Career Fair and Industry Exploration Day 2025 or
-        our website: 
+        our website:  
         <a href="https://careerfair.vgu.edu.vn/" target="_blank" rel="noopener noreferrer">
           https://careerfair.vgu.edu.vn/
         </a>
@@ -29,12 +29,11 @@ export default function Section1({ formData, setFormData }) {
       <p><strong>Sincerely,</strong></p>
       <p>VGU CFIED 2025 Organizer Committee</p>
       <p>
-        Contact: Vo Phan Hoang Trang -
+        Contact: Vo Phan Hoang Trang -  
         <a href="mailto:trang.vph@vgu.edu.vn">
           trang.vph@vgu.edu.vn
         </a> / +84- (0) 274-2220990 – Ext: 70104
       </p>
     </div>
-    );
-  }
-  
+  );
+}
