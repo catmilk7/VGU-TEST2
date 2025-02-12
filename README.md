@@ -20,11 +20,11 @@ This project is a full stack form mimicing Google Form, designated for companies
 ```
 
 ### Usage notice:
-In order to use this project, download all files to your computer, and make sure to install all required softwares.
-Test the files by running
+In order to use this project, download all files to your computer, and make sure to install npm.
 ```
 npm install
 ```
+Test the files by running.
 ```
 npm run dev
 ```
