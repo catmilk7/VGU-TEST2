@@ -5,9 +5,24 @@ import Section3 from "./Section3";
 
 export default function FormPage() {
   const [formData, setFormData] = useState({
-    name: "",
+    companyName: "",
+    companyAddress: "",
+    companyPhone: "",
+    companyWebsite: "",
+    companyLinkedin: "",
+    companyFanpage: "",
+    companyCareerPage: "",
+    companyLogo: null,
+    videoLink: "",
+    companyIntroduction: "",
+    registrationType: "Exhibitor",
+    sponsorLevel: "",
+    boothSize: "",
+    fullName: "",
+    department: "",
     email: "",
-    age: "",
+    phone: "",
+    inquiries: "",
   });
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -17,7 +32,7 @@ export default function FormPage() {
 
   return (
     <div>
-      {currentStep === 1 && <Section1 formData={formData} setFormData={setFormData} />}
+      {currentStep === 1 && <Section1/>}
       {currentStep === 2 && <Section2 formData={formData} setFormData={setFormData} />}
       {currentStep === 3 && <Section3 formData={formData} setFormData={setFormData} />}
       
