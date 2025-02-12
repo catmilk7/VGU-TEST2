@@ -1,35 +1,26 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 export default function Section3({ formData, setFormData }) {
-
-  const nameRef = useRef();
-  const departmentRef = useRef();
-  const emailRef = useRef();
-  const phoneRef = useRef();
-  const inquiriesRef = useRef();
   const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
 
-    const name = nameRef.current.value.trim();
-    const email = emailRef.current.value.trim();
-
-    if (!name || !email) {
+    if (!formData.fullName || !formData.email) {
       setError("Full name and email are required.");
       return;
     }
 
-    const data = {
-      fullName: name,
-      department: departmentRef.current?.value || "",
-      email: email,
-      phone: phoneRef.current?.value || "",
-      inquiries: inquiriesRef.current?.value || "",
-    };
-
-    console.log("Contact Person Information Submitted:", data);
+    console.log("Contact Person Information Submitted:", formData);
   };
 
   return (
@@ -38,28 +29,53 @@ export default function Section3({ formData, setFormData }) {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Contact Person's Full Name *: </label>
-          <input type="text" ref={nameRef} placeholder="Ex: Mr. Nguyễn Văn A" required />
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName || ""}
+            onChange={handleChange}
+            placeholder="Ex: Mr. Nguyễn Văn A"
+            required
+          />
         </div>
         <div>
           <label>Contact Person's Department: </label>
-          <input type="text" ref={departmentRef} />
+          <input
+            type="text"
+            name="department"
+            value={formData.department || ""}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label>Contact Person's Email *: </label>
-          <input type="email" ref={emailRef} required />
+          <input
+            type="email"
+            name="email"
+            value={formData.email || ""}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
           <label>Contact Person's Phone Number: </label>
-          <input type="tel" ref={phoneRef} />
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone || ""}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label>Special Inquiries: </label>
-          <textarea ref={inquiriesRef}></textarea>
+          <textarea
+            name="inquiries"
+            value={formData.inquiries || ""}
+            onChange={handleChange}
+          ></textarea>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>
   );
-};
-
-  
+}
